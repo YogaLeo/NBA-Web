@@ -1,0 +1,10 @@
+.App-logo {
+    height: 35px;
+}
+
+.App-header {
+    display: flex;
+    padding: 10px 0 10px 40px;
+    background-color: #1D428A;
+    box-shadow: -1px 0 5px 0 #888;
+}
