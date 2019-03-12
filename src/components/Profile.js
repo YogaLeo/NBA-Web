@@ -1,8 +1,8 @@
 import React from 'react';
-import { PROFILE_PIC_URL_PREFIX, TEAM_PIC_URL_PREFIX} from '../constants'
+import {PROFILE_PIC_URL_PREFIX, TEAM_PIC_URL_PREFIX} from '../constants'
 
 export class Profile extends React.Component {
-    render(){
+    render() {
 
         console.log(this.props.playerInfo);
         const {
@@ -19,7 +19,7 @@ export class Profile extends React.Component {
             pie
         } = this.props.playerInfo;
 
-        return(
+        return (
             <div className="profile">
                 <div className="player-name">
                     {playerName}

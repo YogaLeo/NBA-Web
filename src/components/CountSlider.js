@@ -7,25 +7,26 @@ export class CountSlider extends React.Component {
     }
 
     onChange = (value) => {
-        const cleanValue = Number(value) ? value : this.state.inputValue;
+        console.log(value)
         this.setState({
-            inputValue: cleanValue,
+            inputValue: value,
         });
-        this.props.onMinCountChange(cleanValue);
+        this.props.onMinCountChange(value);
     }
 
     render() {
+        const {inputValue} = this.state;
         return (
             <Row>
                 <Col span={12}>
-                    <Slider min={1} max={20} onChange={this.onChange} value={this.state.inputValue} />
+                    <Slider min={1} max={20} onChange={this.onChange} value={inputValue}/>
                 </Col>
                 <Col span={4}>
                     <InputNumber
                         min={1}
                         max={20}
-                        style={{ marginLeft: 16 }}
-                        value={this.state.inputValue}
+                        style={{marginLeft: 16}}
+                        value={inputValue}
                         onChange={this.onChange}
                     />
                 </Col>

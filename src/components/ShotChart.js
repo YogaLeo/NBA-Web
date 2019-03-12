@@ -1,11 +1,11 @@
 import React from 'react';
 import nba from 'nba';
 import * as d3 from 'd3';
-import { hexbin } from 'd3-hexbin';
-import { court, shots } from 'd3-shotchart';
+import {hexbin} from 'd3-hexbin';
+import {court, shots} from 'd3-shotchart';
 import PropTypes from 'prop-types';
 
-window.d3_hexbin = {hexbin : hexbin}; // workaround library problem
+window.d3_hexbin = {hexbin: hexbin}; // workaround library problem
 
 export class ShotChart extends React.Component {
     static propTypes = {
@@ -40,6 +40,7 @@ export class ShotChart extends React.Component {
             courtSelection.datum(final_shots).call(chart_shots);
         });
     }
+
     render() {
         return (
             <div id="shot-chart"></div>
