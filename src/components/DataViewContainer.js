@@ -25,6 +25,20 @@ export class DataViewContainer extends React.Component {
         this.setState({displayTooltip});
     }
 
+    debounce = (func, timeout) => {
+        var timer;
+        return (...args) => {
+            if(timer){
+                window.clearTimeout(timer); // 清除旧的timer 这样只有在最后一次才会timer之后生效
+            }
+
+            timer = window.setTimeout(() => {
+                // console.log('debounce');
+                func.apply(null, args);
+            }, timeout);
+        }
+    }
+
     render() {
 
         const {
@@ -49,7 +63,7 @@ export class DataViewContainer extends React.Component {
                                     <Col span={16}>
                                         <CountSlider
                                             value={minCount}
-                                            onMinCountChange={_.debounce(this.onMinCountChange, 500)}
+                                            onMinCountChange={this.debounce(this.onMinCountChange, 500)}
                                             className="filter-control"/>
                                     </Col>
                                 </Row>

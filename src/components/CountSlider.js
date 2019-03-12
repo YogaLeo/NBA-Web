@@ -7,11 +7,15 @@ export class CountSlider extends React.Component {
     }
 
     onChange = (value) => {
-        console.log(value)
+        // Check before setstate to avoid unlegal input
+        let cleanValue = Number.parseInt(value, 10);
+        cleanValue = isNaN(cleanValue) ? this.state.inputValue : cleanValue;
+
+        // 可以用if抱起来 但是要注意0 === false, 如果遇到有0的情况不要考虑if
         this.setState({
-            inputValue: value,
+            inputValue: cleanValue,
         });
-        this.props.onMinCountChange(value);
+        this.props.onMinCountChange(cleanValue);
     }
 
     render() {
