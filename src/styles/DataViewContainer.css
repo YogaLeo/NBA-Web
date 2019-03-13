@@ -1,10 +1,9 @@
 .data-view {
     width: 550px;
-    position: relative;
+    flex: 1;
 }
 
 .filters {
-    position: absolute;
     bottom: 0;
     width: 100%;
 }

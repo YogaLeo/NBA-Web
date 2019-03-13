@@ -59,7 +59,7 @@ export class DataViewContainer extends React.Component {
                     {
                         chartType === 'hexbin' ? (
                                 <Row className="filter-row">
-                                    <Col span={2} offset={3} className="filter-label">Shots:</Col>
+                                    <Col span={2} offset={6} className="filter-label">Shots:</Col>
                                     <Col span={16}>
                                         <CountSlider
                                             value={minCount}
@@ -72,7 +72,7 @@ export class DataViewContainer extends React.Component {
                     }
 
                     <Row className="filter-row">
-                        <Col span={10} offset={3}>
+                        <Col span={9} offset={6}>
                             <RadioGroup onChange={this.onChartTypeChange} value={chartType} className="filter-control">
                                 <Radio value="hexbin">Hexbin</Radio>
                                 <Radio value="scatter">Scatter</Radio>
